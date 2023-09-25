@@ -7,8 +7,10 @@ import 'dotenv/config';
 
 const dataSource = new DataSource({
     type: "postgres",
+    url: undefined || process.env.POSTGRES_URL,
+    ssl: undefined || true,
     host: "localhost" || process.env.POSTGRES_HOST,
-    port: 5432,
+    port: 5432 || undefined,
     username: "postgres"  || process.env.POSTGRES_USER,
     password: "Gigih985042@" || process.env.POSTGRES_PASSWORD,
     database: "quick_count_2024" || process.env.POSTGRES_DATABASE,
