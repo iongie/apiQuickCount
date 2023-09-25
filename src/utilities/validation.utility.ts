@@ -89,6 +89,20 @@ const candidate: ValidationChain[] = [
         }).withMessage('Loading wajib bernilai false'),
 ]
 
+const user: ValidationChain[] = [
+    body('name')
+        .not()
+        .isEmpty().withMessage('Nama tidak boleh kosong!'),
+    body('email')
+        .not()
+        .isEmpty().withMessage('Email tidak boleh kosong!')
+        .bail()
+        .isEmail().withMessage('Format Email tidak valid!'),
+    body('alamat')
+        .not()
+        .isEmpty().withMessage('Alamat tidak boleh kosong!'),
+]
+
 
 function validation(req: Request, res: Response, next: NextFunction) {
     const result = validationResult(req);
@@ -106,5 +120,6 @@ export {
     validation,
     registration,
     category,
-    candidate
+    candidate,
+    user
 }
