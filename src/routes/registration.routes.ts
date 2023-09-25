@@ -16,7 +16,7 @@ class RegistrationRoute {
         app.get('/search-registration', this.search)
         app.post('/delete-all-data-registration', this.deleteAll)
         app.get('/count-data-registration', this.countData)
-        app.route('hallo').get(this.hallo)
+        app.route('/hallo').get(this.hallo)
     }
 
     hallo(req: Request, res: Response){
