@@ -7,11 +7,8 @@ import 'dotenv/config';
 
 const dataSource = new DataSource({
     type: "postgres",
-    host: "localhost" || process.env.POSTGRES_HOST,
-    port: 5432,
-    username: "postgres"  || process.env.POSTGRES_USER,
-    password: "Gigih985042@" || process.env.POSTGRES_PASSWORD,
-    database: "quick_count_2024" || "api-quick-count-postgres",
+    url: process.env.POSTGRES_URL,
+    ssl: true,
     synchronize: true,
     logging: false,
     entities: [Registrations, User, Category, Candidate],
