@@ -32,8 +32,8 @@ class UserRoute {
     }
 
     update(req: Request, res: Response) {
-        const {id, name, page, detail, nameCode} = req.body
-        canUpdate(id, {id, name, page, detail, nameCode}, res, userRepo)
+        const {id, name, nik, email, codedpd, codedpr, codedprdprov, codedprdkabKo} = req.body
+        canUpdate(id, {id, name, nik, email, codedpd, codedpr, codedprdprov, codedprdkabKo}, res, userRepo)
     }
 
     delete(req: Request, res: Response) {

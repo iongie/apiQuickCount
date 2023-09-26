@@ -12,14 +12,17 @@ export class User {
     nik: string;
 
     @Column()
-    codeDpd: number;
+    email: string;
 
     @Column()
-    codeDpr: number;
+    codedpd: number;
 
     @Column()
-    codeDprdProv: number;
+    codedpr: number;
 
     @Column()
-    codeDprdKabKo: number;
+    codedprdprov: number;
+
+    @Column()
+    codedprdkabKo: number;
 }
